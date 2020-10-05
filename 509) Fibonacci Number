@@ -1,0 +1,15 @@
+lookup={}
+def fiboRecur(N):
+    if N==0:
+        return 0
+    if N==1:
+        return 1
+    if N in lookup.keys():
+        return lookup[N]
+    else:
+        lookup[N]=fiboRecur(N-1)+fiboRecur(N-2)
+        return lookup[N]
+class Solution:
+    def fib(self, N):
+        return fiboRecur(N)
+        
