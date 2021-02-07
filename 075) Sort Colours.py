@@ -1,0 +1,17 @@
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        start=0
+        last=len(nums)-1
+        i=0
+        while i<=last:
+            if nums[i]==0 and i!=start:
+                nums[i],nums[start]=nums[start],nums[i]
+                start+=1
+            elif nums[i]==2:
+                nums[i],nums[last]=nums[last],nums[i]
+                last-=1
+            else:
+                i+=1
